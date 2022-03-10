@@ -30,22 +30,22 @@ void Cannon::move(const std::string& dir){
         this->pos.x = std::max(this->pos.x - velocity, left_border);
 }
 
-bool Cannon::check_hit(std::vector <Ball>& balls){
-    for(auto& ball: balls){
-        sf::Vector2f ball_center(ball.get_center_pos());
-        int radius = ball.get_radius();
-        float x1 = this->pos.x;
-        float x2 = this->pos.x + this->width;
+// bool Cannon::check_hit(std::vector <Ball>& balls){
+//     for(auto& ball: balls){
+//         sf::Vector2f ball_center(ball.get_center_pos());
+//         int radius = ball.get_radius();
+//         float x1 = this->pos.x;
+//         float x2 = this->pos.x + this->width;
 
-        if(ball_center.y + radius >= this->pos.y + 30){
-            if((ball_center.x - radius <= x1 && x1 <= ball_center.x + radius) ||
-               (ball_center.x - radius <= x2 && x2 <= ball_center.x + radius) ||
-               (x1 <= ball_center.x && ball_center.x <= x2))
-                return 1;
-        }
-    }
-    return 0;
-}
+//         if(ball_center.y + radius >= this->pos.y + 30){
+//             if((ball_center.x - radius <= x1 && x1 <= ball_center.x + radius) ||
+//                (ball_center.x - radius <= x2 && x2 <= ball_center.x + radius) ||
+//                (x1 <= ball_center.x && ball_center.x <= x2))
+//                 return 1;
+//         }
+//     }
+//     return 0;
+// }
 
 Cannon::Cannon(){
     score = 0;
