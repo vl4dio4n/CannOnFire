@@ -80,6 +80,24 @@ endif()
 
 ###############################################################################
 
+function(sfml_set_custom_stdlib target)
+    if(APPLE)
+    elseif(UNIX)
+        if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+            target_compile_options(${target} PRIVATE "-stdlib=libc++")
+            target_link_libraries(${target} PRIVATE "-stdlib=libc++")
+        endif()
+    endif()
+endfunction()
+
+FetchContent_MakeAvailable(SFML)
+
+sfml_set_custom_stdlib(sfml-system)
+sfml_set_custom_stdlib(sfml-window)
+sfml_set_custom_stdlib(sfml-graphics)
+
+###############################################################################
+
 target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${SFML_SOURCE_DIR}/include)
 target_link_directories(${PROJECT_NAME} PRIVATE ${SFML_BINARY_DIR}/lib)
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
