@@ -58,11 +58,11 @@ jobs:
             name: macOS 11 Apple Clang 13
             cmake_flags: -DSFML_BUILD_FRAMEWORKS=FALSE -DSFML_DEPENDENCIES_INSTALL_PREFIX=$GITHUB_WORKSPACE/artifacts -DBUILD_SHARED_LIBS=FALSE
 
-          - os: macos-11
-            c: gcc-11
-            cxx: g++-11
-            name: macOS 11 GCC 11
-            cmake_flags: -DSFML_BUILD_FRAMEWORKS=FALSE -DSFML_DEPENDENCIES_INSTALL_PREFIX=$GITHUB_WORKSPACE/artifacts -DBUILD_SHARED_LIBS=FALSE
+#           - os: macos-11
+#             c: gcc-11
+#             cxx: g++-11
+#             name: macOS 11 GCC 11
+#             cmake_flags: -DSFML_BUILD_FRAMEWORKS=FALSE -DSFML_DEPENDENCIES_INSTALL_PREFIX=$GITHUB_WORKSPACE/artifacts -DBUILD_SHARED_LIBS=FALSE
 
           - os: windows-2022
             c: cl
@@ -179,7 +179,7 @@ jobs:
         if: runner.os == 'Windows' && matrix.cxx == 'g++'
         with:
           path: gcc
-          key: ${{ runner.os }}-gcc-11.2-ucrt-r5
+          key: ${{ runner.os }}-gcc-10.3-ucrt-r5
 
       - name: Download toolchain (MinGW)
         uses: suisei-cn/actions-download-file@v1
@@ -189,14 +189,13 @@ jobs:
         # For more versions, see https://winlibs.com or
         # https://github.com/brechtsanders/winlibs_mingw/releases/
         with:
-          url: "https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-ucrt-r5/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64ucrt-9.0.0-r5.7z"
+          url: "https://github.com/brechtsanders/winlibs_mingw/releases/download/10.3.0-12.0.0-9.0.0-r2/winlibs-x86_64-posix-seh-gcc-10.3.0-mingw-w64-9.0.0-r2.7z"
           target: compiler
 
       - name: Install toolchain (MinGW)
         if: runner.os == 'Windows' && matrix.cxx == 'g++' && steps.cache-mingw.outputs.cache-hit != 'true'
         run: |
-          7z x compiler/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64ucrt-9.0.0-r5.7z -ogcc
-
+          7z x compiler/winlibs-x86_64-posix-seh-gcc-10.3.0-mingw-w64-9.0.0-r2.7z -ogcc
       - name: Configure CMake (MinGW)
         if: runner.os == 'Windows' && matrix.cxx == 'g++'
         run: |
