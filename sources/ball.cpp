@@ -23,7 +23,7 @@ Ball::Ball(){
     pos.y = 0;
     center_pos.x = pos.x + radius;
     center_pos.y = pos.y + radius;
-    circle.setRadius(radius);
+    circle.setRadius((float)radius);
     circle.setOutlineColor(sf::Color(rand() % 256, rand() % 256, rand() % 256, 255));
     circle.setOutlineThickness(5);
     circle.setFillColor(sf::Color(rand() % 256, rand() % 256, rand() % 256, 255));
@@ -43,7 +43,7 @@ sf::Vector2f Ball::get_center_pos(){
 }
 
 float Ball::cosine(float angle){
-    return std::cos(3.14159265 * angle / 180);
+    return (float)(std::cos(3.14159265 * angle / 180));
 }
 
 int Ball::damage(int d){
@@ -113,11 +113,11 @@ void Ball::hit_wall(int wall){
 
 void Ball::move(){
     if(this->last_hit_wall & 1){
-        this->pos.x += velocity * cosine(90 - this->alpha) * dx[this->dir];
-        this->pos.y += velocity * cosine(this->alpha) * dy[this->dir];
+        this->pos.x += velocity * cosine((float)(90 - this->alpha)) * dx[this->dir];
+        this->pos.y += velocity * cosine((float)(this->alpha)) * dy[this->dir];
     } else {
-        this->pos.x += velocity * cosine(this->alpha) * dx[this->dir];
-        this->pos.y += velocity * cosine(90 - this->alpha) * dy[this->dir];
+        this->pos.x += velocity * cosine((float)(this->alpha)) * dx[this->dir];
+        this->pos.y += velocity * cosine((float)(90 - this->alpha)) * dy[this->dir];
     }
     this->center_pos.x = this->pos.x + this->radius;
     this->center_pos.y = this->pos.y + this->radius;
@@ -139,7 +139,7 @@ std::string Ball::int_to_string(int num){
         s.push_back('0');
     for( ; num; num /= 10)
         s.push_back('0' + num % 10);
-    for(int i = 0, j = s.size() - 1; i < j; i ++, j --)
+    for(int i = 0, j = (int)(s.size()) - 1; i < j; i ++, j --)
         std::swap(s[i], s[j]);
     return s;
 }

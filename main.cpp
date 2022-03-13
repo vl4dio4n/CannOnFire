@@ -2,7 +2,7 @@
 
 int main()
 {
-    srand(time(NULL));
+    srand((unsigned) time(0));
     Engine engine;
     engine.run();
     return 0;

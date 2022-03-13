@@ -16,8 +16,8 @@ class Engine{
 private:
     static int delay_bullets;
     static int delay_balls;
-    static int window_width;
-    static int window_height;
+    static float window_width;
+    static float window_height;
     Cannon tank;
     std::vector<Ball> balls;
     std::vector<std::pair<Button, std::vector<std::string>>> buttons;

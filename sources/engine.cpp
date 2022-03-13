@@ -7,8 +7,8 @@
 
 int Engine::delay_bullets = 100;
 int Engine::delay_balls = 20000;
-int Engine::window_width = 900;
-int Engine::window_height = 1050.0;
+float Engine::window_width = (float)900.0;
+float Engine::window_height = (float)1050.0;
 
 Engine::Engine(){
     balls.push_back(Ball());
