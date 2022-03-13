@@ -19,7 +19,7 @@ private:
     sf::Color outline_color;
     sf::Color text_color;
 public:
-    Button(int, int, float, sf::Vector2f&, std::string, const sf::Color&, const sf::Color&, const sf::Color&);
+    Button(int, int, float, sf::Vector2f&, const std::string&, const sf::Color&, const sf::Color&, const sf::Color&);
     void display(sf::RenderWindow&);
     void display_text(sf::RenderWindow&);
     bool check_hover(sf::Vector2f);

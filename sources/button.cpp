@@ -4,7 +4,7 @@
 
 #include "../headers/button.hpp"
 
-Button::Button(int width, int height, float outline_thickness, sf::Vector2f& pos, std::string text, const sf::Color& fill_color, const sf::Color& outline_color, const sf::Color& text_color):
+Button::Button(int width, int height, float outline_thickness, sf::Vector2f& pos, const std::string& text, const sf::Color& fill_color, const sf::Color& outline_color, const sf::Color& text_color):
     width{width}, height{height}, outline_thickness{outline_thickness}, text{text}, pos{pos}, fill_color{fill_color}, outline_color{outline_color}, text_color{text_color}{}
 
 void Button::display(sf::RenderWindow &window) {
