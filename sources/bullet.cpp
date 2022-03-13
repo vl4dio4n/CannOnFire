@@ -32,7 +32,7 @@ bool Bullet::inside_circle(float bullet_x , float bullet_y, float center_x, floa
 bool Bullet::check_collision(std::vector<Ball>& balls, int& score){
     if(this->pos.y + this->height <= 0)
         return 1;
-    for(int i = balls.size() - 1; i >= 0; i --){
+    for(int i = (int)(balls.size()) - 1; i >= 0; i --){
         sf::Vector2f ball_center(balls[i].get_center_pos());
         if(this->inside_circle(this->pos.x, this->pos.y, ball_center.x, ball_center.y, balls[i].get_radius())){
             score += std::min(balls[i].get_life(), this->damage);

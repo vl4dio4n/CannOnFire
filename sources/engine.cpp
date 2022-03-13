@@ -27,7 +27,7 @@ std::string Engine::int_to_string(int num){
         s.push_back('0');
     for( ; num; num /= 10)
         s.push_back('0' + num % 10);
-    for(int i = 0, j = s.size() - 1; i < j; i ++, j --)
+    for(int i = 0, j = (int)(s.size()) - 1; i < j; i ++, j --)
         std::swap(s[i], s[j]);
     return s;
 }

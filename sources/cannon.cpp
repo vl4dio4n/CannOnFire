@@ -49,7 +49,7 @@ void Cannon::shoot(){
 void Cannon::update(std::vector<Ball>& balls, int& scr){
     for(auto& bullet: this->bullets)
         bullet.move();
-    for(int i = this->bullets.size() - 1; i >= 0; i --)
+    for(int i = (int)(this->bullets.size()) - 1; i >= 0; i --)
         if(this->bullets[i].check_collision(balls, scr))
             this->bullets.erase(this->bullets.begin() + i);
 }
