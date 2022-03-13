@@ -55,7 +55,7 @@ void Engine::run(){
     sf::RenderWindow window(sf::VideoMode((unsigned int)(window_width), (unsigned int)(window_height)), "CannOnFire");
 
     sf::Time last_shoot, last_ball, start_time, start_pause, end_pause;
-    int total_paused_time;
+    int total_paused_time = 0;
 
     sf::Sprite background_sprite;
     background_sprite.setTexture(this->background_texture);
