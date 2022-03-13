@@ -9,7 +9,7 @@ Button::Button(int width, int height, float outline_thickness, sf::Vector2f& pos
 
 void Button::display(sf::RenderWindow &window) {
     this->rect.setPosition(this->pos);
-    this->rect.setSize(sf::Vector2f(this->width, this->height));
+    this->rect.setSize(sf::Vector2f((float)this->width, (float)this->height));
     this->rect.setFillColor(this->fill_color);
     this->rect.setOutlineColor(this->outline_color);
     this->rect.setOutlineThickness(this->outline_thickness);

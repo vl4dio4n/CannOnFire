@@ -19,7 +19,7 @@ Ball::Ball(){
     dir = rand() % 2 + 2;
     alpha = rand() % 76;
     last_hit_wall = 1;
-    pos.x = rand() % (900 - 2 * radius);
+    pos.x = (float)(rand() % (900 - 2 * radius));
     pos.y = 0;
     center_pos.x = pos.x + radius;
     center_pos.y = pos.y + radius;
