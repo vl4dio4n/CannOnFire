@@ -28,15 +28,15 @@ void Button::display_text(sf::RenderWindow &window){
     window.draw(text_obj);
 }
 
-void Button::set_fill_color(sf::Color& color) {
+void Button::set_fill_color(const sf::Color& color) {
     fill_color = color;
 }
 
-void Button::set_outline_color(sf::Color& color) {
+void Button::set_outline_color(const sf::Color& color) {
     outline_color = color;
 }
 
-void Button::set_text_color(sf::Color& color) {
+void Button::set_text_color(const sf::Color& color) {
     text_color = color;
 }
 

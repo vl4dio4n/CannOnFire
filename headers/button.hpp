@@ -23,9 +23,9 @@ public:
     void display(sf::RenderWindow&);
     void display_text(sf::RenderWindow&);
     bool check_hover(sf::Vector2f);
-    void set_fill_color(sf::Color&);
-    void set_outline_color(sf::Color&);
-    void set_text_color(sf::Color&);
+    void set_fill_color(const sf::Color&);
+    void set_outline_color(const sf::Color&);
+    void set_text_color(const sf::Color&);
     std::string get_text();
 };
 
