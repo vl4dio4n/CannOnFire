@@ -12,6 +12,24 @@ float Ball::right_border = 896.0;
 float Ball::top_border = 4.0;
 float Ball::bottom_border = 971;
 
+Ball::Ball(){
+    velocity = (float) (rand() % 3) + 1;
+    radius = rand() % 61 + 40;
+    life = rand() % 101; // de modificat in functie de scorul jucatorului sau timp
+    dir = rand() % 2 + 2;
+    alpha = rand() % 76;
+    last_hit_wall = 1;
+    pos.x = rand() % (900 - 2 * radius);
+    pos.y = 0;
+    center_pos.x = pos.x + radius;
+    center_pos.y = pos.y + radius;
+    circle.setRadius(radius);
+    circle.setOutlineColor(sf::Color(rand() % 256, rand() % 256, rand() % 256, 255));
+    circle.setOutlineThickness(5);
+    circle.setFillColor(sf::Color(rand() % 256, rand() % 256, rand() % 256, 255));
+    circle.setPosition(pos.x, pos.y);
+}
+
 int Ball::get_radius(){
     return this->radius;
 }
@@ -115,24 +133,6 @@ void Ball::move(){
     this->circle.setPosition(this->pos);
 }
 
-Ball::Ball(){
-    velocity = (float) (rand() % 3) + 1;
-    radius = rand() % 61 + 40;
-    life = rand() % 101; // de modificat in functie de scorul jucatorului sau timp
-    dir = rand() % 2 + 2;
-    alpha = rand() % 76;
-    last_hit_wall = 1;
-    pos.x = rand() % (900 - 2 * radius);
-    pos.y = 0;
-    center_pos.x = pos.x + radius;
-    center_pos.y = pos.y + radius;
-    circle.setRadius(radius);
-    circle.setOutlineColor(sf::Color(rand() % 256, rand() % 256, rand() % 256, 255));
-    circle.setOutlineThickness(5);
-    circle.setFillColor(sf::Color(rand() % 256, rand() % 256, rand() % 256, 255));
-    circle.setPosition(pos.x, pos.y);
-}
-
 std::string Ball::int_to_string(int num){
     std::string s;
     if(num == 0)
@@ -158,4 +158,8 @@ void Ball::generate_text(sf::RenderWindow& window){
 void Ball::display(sf::RenderWindow& window){
     window.draw(this->circle);
     this->generate_text(window);
+}
+std::ostream& operator<<(std::ostream& os, const Ball& ball){
+    os << "The ball at position " << ball.pos.x << " " << ball.pos.y << " has the speed of " << ball.velocity << " ps/sec.";
+    return os;
 }

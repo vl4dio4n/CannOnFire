@@ -34,7 +34,7 @@ FetchContent_MakeAvailable(SFML)
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml when changing name here
-add_executable(${PROJECT_NAME} main.cpp headers/ball.hpp headers/cannon.hpp headers/engine.hpp headers/bullet.hpp sources/ball.cpp sources/engine.cpp sources/bullet.cpp sources/cannon.cpp)
+add_executable(${PROJECT_NAME} main.cpp headers/ball.hpp headers/cannon.hpp headers/engine.hpp headers/bullet.hpp sources/ball.cpp sources/engine.cpp sources/bullet.cpp sources/cannon.cpp headers/button.hpp sources/button.cpp)
 
 ###############################################################################
 

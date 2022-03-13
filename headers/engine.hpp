@@ -10,6 +10,7 @@
 #include <SFML/System.hpp>
 #include "cannon.hpp"
 #include "ball.hpp"
+#include "button.hpp"
 
 class Engine{
 private:
@@ -19,14 +20,18 @@ private:
     static int window_height;
     Cannon tank;
     std::vector<Ball> balls;
+    std::vector<std::pair<Button, std::vector<std::string>>> buttons;
     sf::Clock clock;
     sf::Texture background_texture;
 
 public:
     Engine();
+    ~Engine();
     std::string int_to_string(int);
     void display_text(sf::RenderWindow&, std::string&, float, float);
     void run();
+    void reset_game();
+    friend std::ostream& operator<<(std::ostream&, const Engine&);
 };
 
 #endif //OOP_ENGINE_HPP

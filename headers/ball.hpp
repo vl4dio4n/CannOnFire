@@ -26,6 +26,7 @@ private:
     sf::CircleShape circle;
 public:
     Ball();
+    ~Ball() = default;
     int get_radius();
     int get_life();
     float cosine(float);
@@ -36,6 +37,7 @@ public:
     std::string int_to_string(int);
     void generate_text(sf::RenderWindow&);
     void display(sf::RenderWindow&);
+    friend std::ostream& operator<<(std::ostream&, const Ball&);
 };
 
 #endif //OOP_BALL_HPP

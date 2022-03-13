@@ -25,11 +25,17 @@ private:
     sf::Texture tank_texture;
 public:
     Cannon();
+    ~Cannon();
+    Cannon(const Cannon&);
     void display(sf::RenderWindow&);
     void move(const std::string&);
     void shoot();
     void update(std::vector<Ball>&, int&);
     bool check_hit(std::vector <Ball>&);
+    void reset_tank();
+    void set_score(int);
+    Cannon& operator=(const Cannon&);
+    friend std::ostream& operator<<(std::ostream&, const Cannon&);
 };
 
 #endif //OOP_CANNON_HPP

@@ -6,8 +6,18 @@
 
 float Bullet::velocity = 6.0;
 int Bullet::damage = 2;
-float Bullet::left_border = 0.0;
 float Bullet::right_border = 900.0;
+
+Bullet::Bullet(const sf::Vector2f& tank_pos, float tank_width, float tank_height){
+    bullet_texture.loadFromFile("resurse/bullet.png");
+    sf::Sprite bullet_sprite;
+    bullet_sprite.setTexture(bullet_texture);
+    sf::FloatRect bullet_rect(bullet_sprite.getLocalBounds());
+    width = bullet_rect.width;
+    height = bullet_rect.height;
+    pos.x = tank_pos.x + tank_width / 2 - width / 2;
+    pos.y = tank_pos.y + tank_height - height;
+}
 
 void Bullet::move(){
     this->pos.y -= velocity;
@@ -35,20 +45,14 @@ bool Bullet::check_collision(std::vector<Ball>& balls, int& score){
     return 0;
 }
 
-Bullet::Bullet(const sf::Vector2f& tank_pos, float tank_width, float tank_height){
-    bullet_texture.loadFromFile("resurse/bullet.png");
-    sf::Sprite bullet_sprite;
-    bullet_sprite.setTexture(bullet_texture);
-    sf::FloatRect bullet_rect(bullet_sprite.getLocalBounds());
-    width = bullet_rect.width;
-    height = bullet_rect.height;
-    pos.x = tank_pos.x + tank_width / 2 - width / 2;
-    pos.y = tank_pos.y + tank_height - height;
-}
-
 void Bullet::display(sf::RenderWindow& window){
     sf::Sprite bullet_sprite;
     bullet_sprite.setTexture(this->bullet_texture);
     bullet_sprite.setPosition(this->pos);
     window.draw(bullet_sprite);
+}
+
+std::ostream& operator<<(std::ostream& os, const Bullet& bullet){
+    os << "The bullet at position " << bullet.pos.x << " " << bullet.pos.y << "has the speed of " << bullet.velocity << " px/sec and " << bullet.damage << " damage.\n ";
+    return os;
 }
