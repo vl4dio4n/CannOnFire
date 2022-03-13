@@ -52,7 +52,7 @@ void Engine::run(){
 
     srand((unsigned) time(0));
 
-    sf::RenderWindow window(sf::VideoMode(window_width, window_height), "CannOnFire");
+    sf::RenderWindow window(sf::VideoMode((unsigned int)(window_width), (unsigned int)(window_height)), "CannOnFire");
 
     sf::Time last_shoot, last_ball, start_time, start_pause, end_pause;
     int total_paused_time;
