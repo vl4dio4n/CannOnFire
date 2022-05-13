@@ -1,52 +1,13 @@
-# OOP Template
+# 🔥CannOnFire
 
-### Tema 0
+## Object Oriented Programming Project
 
-- [ ] Nume proiect (îl puteți schimba ulterior)
-- [ ] Scurtă descriere a temei alese, ce v-ați propus să implementați
+### About
+This is an OOP project for a course at Faculty of Mathematics and Informatics of University of Bucharest. It's an C++ game built with the help of SFML library. The goal of the game is to shoot in some falling balls and increase your score without being hit by any of them (that is the moment you loose). 
 
-## Tema 1
+### Good to know
+- the cannons's controllers are &larr; and &rarr;
+- in order to shoot keep the the `space` key pressed
 
-#### Cerințe
-- [ ] definirea a minim 3-4 clase folosind compunere
-- [ ] constructori de inițializare
-- [ ] pentru o clasă: constructor de copiere, `operator=` de copiere, destructor
-<!-- - [ ] pentru o altă clasă: constructor de mutare, `operator=` de mutare, destructor -->
-<!-- - [ ] pentru o altă clasă: toate cele 5 funcții membru speciale -->
-- [ ] `operator<<` pentru toate clasele
-- [ ] cât mai multe `const`
-- [ ] implementarea a minim 3 funcții membru publice pentru funcționalități specifice temei alese
-- [ ] scenariu de utilizare a claselor definite (crearea de obiecte și apelarea funcțiilor membru publice în main)
-- [ ] tag de `git`: de exemplu `v0.1`
-- [ ] serviciu de integrare continuă (CI); exemplu: GitHub Actions
-
-## Tema 2
-
-#### Cerințe
-- [ ] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
-- [ ] moșteniri
-  - [ ] funcții virtuale (pure), constructori virtuali (clone)
-  - [ ] apelarea constructorului din clasa de bază 
-  - [ ] smart pointers
-  - [ ] `dynamic_cast`
-- [ ] suprascris cc/op= pentru copieri/atribuiri corecte, copy and swap
-- [ ] excepții
-  - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
-  - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
-- [ ] funcții și atribute `static`
-- [ ] STL
-- [ ] cât mai multe `const`
-- [ ] tag de `git`: de exemplu `v0.2`
-
-## Tema 3
-
-#### Cerințe
-- [ ] 2 șabloane de proiectare (design patterns)
-- [ ] o funcție șablon (template) cu sens; minim 2 instanțieri
-- [ ] o clasă șablon cu sens; minim 2 instanțieri
-- [ ] o specializare pe funcție/clasă șablon
-- [ ] tag de `git`: de exemplu `v0.3` sau `v1.0`
-
-## Resurse
-
-- adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
+### Sneak Peeks
+- Main Menu <br/> <img width="451" alt="main-menu" src="https://user-images.githubusercontent.com/93842197/168221748-56c14921-36d3-48a5-be85-0a1a4c18fe7a.png">
